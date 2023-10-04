@@ -52,15 +52,15 @@ var currentDate = date1.getFullYear();
 document.querySelector("#year").innerHTML = currentDate;
 /* ARRAY METHODS - Functional Programming */
 /* Output Source Array */
-var nums = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13];
 /* Output Odds Only Array */
-document.querySelector("#odds").innerHTML = nums.filter(n => n%2);
+document.querySelector("#odds").innerHTML = numbers.filter(n => n%2);
 /* Output Evens Only Array */
-document.querySelector("#evens").innerHTML = nums.filter(x => x % 2 === 0);
+document.querySelector("#evens").innerHTML = numbers.filter(x => x % 2 === 0);
 /* Output Sum of Org. Array */
-document.querySelector("#sumOfArray").innerHTML = Number(nums.reduce(add,0));
+document.querySelector("#sumOfArray").innerHTML = Number(numbers.reduce(add,0));
 /* Output Multiplied by 2 Array */
-var multiplied = nums.map(x => (x) *2);
+var multiplied = numbers.map(x => (x) *2);
 document.querySelector("#multiplied").innerHTML = multiplied;
 /* Output Sum of Multiplied by 2 Array */
 var sumOfMultiplied = Number(multiplied.reduce(add,0));
