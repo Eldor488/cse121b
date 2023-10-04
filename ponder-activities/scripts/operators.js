@@ -65,3 +65,21 @@ function encounter() {
     }
   }
 } 
+
+function greet(name) {
+    console.log(`Hello, ${name}!`);
+  }
+
+  let firstName = 'Enmanuel';
+let lastName = 'De los Santos Cruz';
+
+// function fullName(firstName, lastName){ 
+//     return  firstName + lastName; 
+// }
+
+// let fullName = function (firstName, last name){
+//     return firstName + lastName; 
+// }
+
+
+let fullName = () => firstName + lastName; 
