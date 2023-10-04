@@ -47,12 +47,12 @@ let divideNumbers = (number1,number2) =>
 document.querySelector("#divideNumbers").addEventListener("click",divideNumbers);
 
 /* Decision Structure */
-var date1 = new Date();
-var currentDate = date1.getFullYear();
+let date1 = new Date();
+let currentDate = date1.getFullYear();
 document.querySelector("#year").innerHTML = currentDate;
 /* ARRAY METHODS - Functional Programming */
 /* Output Source Array */
-var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+let numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13];
 /* Output Odds Only Array */
 document.querySelector("#odds").innerHTML = numbers.filter(n => n%2);
 /* Output Evens Only Array */
@@ -60,10 +60,10 @@ document.querySelector("#evens").innerHTML = numbers.filter(x => x % 2 === 0);
 /* Output Sum of Org. Array */
 document.querySelector("#sumOfArray").innerHTML = Number(numbers.reduce(add,0));
 /* Output Multiplied by 2 Array */
-var multiplied = numbers.map(x => (x) *2);
+let multiplied = numbers.map(x => (x) *2);
 document.querySelector("#multiplied").innerHTML = multiplied;
 /* Output Sum of Multiplied by 2 Array */
-var sumOfMultiplied = Number(multiplied.reduce(add,0));
+let sumOfMultiplied = Number(multipliedNumbers.reduce(add,0));
 document.querySelector("#sumOfMultiplied").innerHTML = sumOfMultiplied;
 
 function validateInput(input) {
