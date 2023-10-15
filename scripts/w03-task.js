@@ -54,7 +54,7 @@ document.querySelector("#year").innerHTML = currentDate;
 /* Output Source Array */
 let numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13];
 /* Output Odds Only Array */
-document.querySelector("#odds").innerHTML = numbers.filter(n => n%2);
+document.querySelector("#odds").innerHTML = numbers.filter(n => n/2);
 /* Output Evens Only Array */
 document.querySelector("#evens").innerHTML = numbers.filter(x => x % 2 === 0);
 /* Output Sum of Org. Array */
