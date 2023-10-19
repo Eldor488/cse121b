@@ -154,4 +154,26 @@ footer {
 
     }
 
+
+
 }
+dl {
+    margin: 0;
+    padding: 0;
+}
+
+dt {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+dd {
+    margin: 0;
+    padding: 0 0 10px 20px; /* Indentation of description */
+}
+
+
+#places-lived {
+    margin-bottom: 10%; /* adjust value as needed */
+}
+
