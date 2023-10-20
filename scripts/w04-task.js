@@ -3,7 +3,7 @@
 /* Profile Object  */ 
 const myProfile = {
     name: "Enmanuel",
-    photo: '/images/profilePicture.jpg',
+    photo: 'images/profilePicture.jpg',
     favoriteFoods: ['Pizza', 'Pasta', 'Sushi', 'Tacos'],
     hobbies: ['Reading', 'Video Games', 'Coding', 'Cooking'],
     placesLived: []
