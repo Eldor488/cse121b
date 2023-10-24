@@ -1,6 +1,6 @@
 
 
-const API_URL = "https://superheroapi.com/api/";
+const API_URL = "https://cors-anywhere.herokuapp.com/https://superheroapi.com/api/";
 const ACCESS_TOKEN = "6505858966191130"; 
 
 const searchButton = document.getElementById('search-btn');
