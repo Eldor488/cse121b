@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE 121b | Project | Marvel and DC Character Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/project.css">
+</head>
+
+<body>
+    <nav>
+        <ul id="menu">
+            <li><a id="toggleMenu">&equiv;</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="w01-task.html">W1 Task</a></li>
+            <li><a href="w03-task.html">W3 Task</a></li>
+            <li><a href="w04-task.html">W4 Task</a></li>
+            <li><a href="w05-task.html">W5 Task</a></li>
+            <li><a href="project.html" class="active">Project</a></li>
+        </ul>
+    </nav>
+    <div class="superhero-details">
+        <div class="search-section">
+            <input type="text" id="superhero-search" placeholder="Search for a superhero...">
+            <button id="search-btn">Search</button>
+        </div>
+        
+        <!-- Image -->
+        <div class="image-section">
+            <img id="superhero-image" src="" alt="Superhero Image">
+        </div>
+    
+        <!-- Name -->
+        <h1 id="superhero-name"></h1>
+    
+        <!-- Powerstats Section -->
+        <section class="powerstats">
+            <h2>Powerstats</h2>
+            <ul>
+                <li>Intelligence: <span id="intelligence"></span></li>
+                <li>Strength: <span id="strength"></span></li>
+                <li>Speed: <span id="speed"></span></li>
+                <li>Durability: <span id="durability"></span></li>
+                <li>Power: <span id="power"></span></li>
+                <li>Combat: <span id="combat"></span></li>
+            </ul>
+        </section>
+    
+        <!-- Biography Section -->
+        <section class="biography">
+            <h2>Biography</h2>
+            <ul>
+                <li>Full Name: <span id="full-name"></span></li>
+                <li>Alter Egos: <span id="alter-egos"></span></li>
+                <li>Aliases: <span id="aliases"></span></li>
+                <li>Place of Birth: <span id="place-of-birth"></span></li>
+                <li>First Appearance: <span id="first-appearance"></span></li>
+                <li>Publisher: <span id="publisher"></span></li>
+                <li>Alignment: <span id="alignment"></span></li>
+            </ul>
+        </section>
+    
+        <!-- Appearance Section -->
+        <section class="appearance">
+            <h2>Appearance</h2>
+            <ul>
+                <li>Gender: <span id="gender"></span></li>
+                <li>Race: <span id="race"></span></li>
+                <li>Height: <span id="height"></span></li>
+                <li>Weight: <span id="weight"></span></li>
+                <li>Eye Color: <span id="eye-color"></span></li>
+                <li>Hair Color: <span id="hair-color"></span></li>
+            </ul>
+        </section>
+    
+        <!-- Work Section -->
+        <section class="work">
+            <h2>Work</h2>
+            <ul>
+                <li>Occupation: <span id="occupation"></span></li>
+                <li>Base: <span id="base"></span></li>
+            </ul>
+        </section>
+    
+        <!-- Connections Section -->
+        <section class="connections">
+            <h2>Connections</h2>
+            <ul>
+                <li>Group Affiliation: <span id="group-affiliation"></span></li>
+                <li>Relatives: <span id="relatives"></span></li>
+            </ul>
+        </section>
+    <footer>
+        &copy;<span id="year"></span> | Personal Project | CSE 121b
+    </footer>
+    <script src="scripts/main.js"></script>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+    <script src="scripts/project.js"></script>
+</body>
+
+</html>
