@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superhero Search</title>
+</head>
+
+<body>
+    <div class="superhero-details">
+        <div class="search-section">
+            <input type="text" id="superhero-search" placeholder="Search for a superhero by ID...">
+            <button id="search-btn">Search</button>
+        </div>
+        <!-- Biography Section -->
+        <div class="section">
+            <h2>Biography</h2>
+            <p>Full Name: <span id="full-name"></span></p>
+            <p>Alter Egos: <span id="alter-egos"></span></p>
+            <p>Aliases: <span id="aliases"></span></p>
+            <p>Place of Birth: <span id="place-of-birth"></span></p>
+            <p>First Appearance: <span id="first-appearance"></span></p>
+            <p>Publisher: <span id="publisher"></span></p>
+            <p>Alignment: <span id="alignment"></span></p>
+        </div>
+        <div class="section">
+            <h2>Powerstats</h2>
+            <p>Intelligence: <span id="intelligence"></span></p>
+            <p>Strength: <span id="strength"></span></p>
+            <p>Speed: <span id="speed"></span></p>
+            <p>Durability: <span id="durability"></span></p>
+            <p>Power: <span id="power"></span></p>
+            <p>Combat: <span id="combat"></span></p>
+        </div>
+        <!-- Appearance Section -->
+        <div class="section">
+            <h2>Appearance</h2>
+            <p>Gender: <span id="gender"></span></p>
+            <p>Race: <span id="race"></span></p>
+            <p>Height: <span id="height"></span></p>
+            <p>Weight: <span id="weight"></span></p>
+            <p>Eye Color: <span id="eye-color"></span></p>
+            <p>Hair Color: <span id="hair-color"></span></p>
+        </div>
+        <!-- Work Section -->
+        <div class="section">
+            <h2>Work</h2>
+            <p>Occupation: <span id="occupation"></span></p>
+            <p>Base: <span id="base"></span></p>
+        </div>
+
+        <!-- Connections Section -->
+        <div class="section">
+            <h2>Connections</h2>
+            <p>Group Affiliation: <span id="group-affiliation"></span></p>
+            <p>Relatives: <span id="relatives"></span></p>
+        </div>
+    </div>
+    <!-- Image Section -->
+    <div class="section">
+        <img id="hero-image" src="#" alt="Hero Image" style="display:none;">
+    </div>
+
+    <script>
+        document.getElementById('search-btn').addEventListener('click', function () {
+            let superheroId = document.getElementById('superhero-search').value;
+            if (superheroId) {
+                fetch(`https://cors-anywhere.herokuapp.com/https://superheroapi.com/api/6505858966191130/${superheroId}`)
+                    .then(response => response.json())
+                    .then(data => {
+
+                        // Displaying the JSON response for simplicity.
+                        // Heroe biography 
+                        document.getElementById('full-name').innerText = data.biography['full-name']
+                        document.getElementById('alter-egos').innerText = data.biography['alter-egos']
+                        document.getElementById('aliases').innerText = data.biography['aliases']
+                        document.getElementById('place-of-birth').innerText = data.biography['place-of-birth']
+                        document.getElementById('first-appearance').innerText = data.biography['first-appearance']
+                        document.getElementById('publisher').innerText = data.biography['publisher']
+                        document.getElementById('alignment').innerText = data.biography['alignment']
+
+                        // Hereoes power stats.
+                        document.getElementById('intelligence').innerText = data.powerstats.intelligence
+                        document.getElementById('strength').innerText = data.powerstats.strength
+                        document.getElementById('speed').innerText = data.powerstats.speed
+                        document.getElementById('durability').innerText = data.powerstats.durability
+                        document.getElementById('power').innerText = data.powerstats.power
+                        document.getElementById('combat').innerText = data.powerstats.combat
+                        // Apearence section 
+                        document.getElementById('gender').innerHTML = data.appearance.gender
+                        document.getElementById('race').innerHTML = data.appearance.race
+                        document.getElementById('height').innerHTML = data.appearance.height
+                        document.getElementById('weight').innerHTML = data.appearance.weight
+                        document.getElementById('eye-color').innerHTML = data.appearance['eye-color']
+                        document.getElementById('hair-color').innerHTML = data.appearance['hair-color']
+                        // Work section
+                        document.getElementById('occupation').innerHTML = data.work.occupation 
+                        document.getElementById('base').innerHTML = data.work.base
+                        // Connections section
+                        document.getElementById('group-affiliation').innerHTML = data.connections['group-affiliation']
+                        document.getElementById('relatives').innerHTML = data.connections.relatives
+                        // Image section
+                        document.getElementById('hero-image').src = data.image.url
+                        document.getElementById('hero-image').style.display = 'block'
+                        
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data:', error);
+                        document.getElementById('results').innerText = 'Failed to fetch superhero data.';
+                    });
+            } else {
+                document.getElementById('results').innerText = 'Please enter a superhero ID.';
+            }
+        });
+    </script>
+</body>
+
+</html>
