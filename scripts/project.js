@@ -33,11 +33,11 @@ const groupAffiliation = document.getElementById('group-affiliation');
 const relatives = document.getElementById('relatives');
 
 searchButton.addEventListener('click', function() {
-    const superheroNameToSearch = searchInput.value.trim();
+    const superHeroID = searchInput.value.trim();
 
-    if(superheroNameToSearch) {
+    if(superHeroID) {
         // Construct the URL
-        const searchUrl = `${API_URL}${ACCESS_TOKEN}/${superheroNameToSearch}`;
+        const searchUrl = `${API_URL}${ACCESS_TOKEN}/${superHeroID}`;
 
         fetch(searchUrl)
         .then(response => response.json())
