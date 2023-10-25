@@ -74,7 +74,7 @@
             document.getElementById('search-btn').addEventListener('click', function () {
             let superheroId = document.getElementById('superhero-search').value;
             if (superheroId) {
-                fetch(`https://superheroapi.com/api/6505858966191130/${superheroId}`)
+                fetch(`https://hero-cors-bridge-22c75d718e5f.herokuapp.com/https://superheroapi.com/api/6505858966191130/${superheroId}`)
                     .then(response => response.json())
                     .then(data => {
 
