@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Superhero Search</title>
+    <title>Superhero or Villain Search</title>
     <link rel="stylesheet" href="project2.css">
 </head>
 
@@ -12,8 +12,9 @@
     <div class="container">
     <div class="superhero-details">
         <h1>Superhero Search</h1>
-        <p>Get the id of your favorite superheroe and put it on the searchbar, and you'll get the information from they.
+        <p>Get the id of your favorite superheroe or Villain and put it on the searchbar, and you'll get the information from they.
         </p>
+        <p>Here's the<a href="superheroList.html"> list</a> of IDs in case you're looking for an specific superheroe🦸 or villain🦹‍♀️</p>
         <div class="search-section">
             <input type="text" id="superhero-search" placeholder="Search for a superhero by ID...">
             <button id="search-btn">Search</button>
@@ -69,63 +70,17 @@
             <img id="hero-image" src="#" alt="Hero Image" style="display:none;">
         </div>
     </div>        
+    
+     <footer>
+        &copy;<span id="year"></span> | Personal Project | CSE 121b
+    </footer>
+    <script src="scripts/project.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('search-btn').addEventListener('click', function () {
-            let superheroId = document.getElementById('superhero-search').value;
-            if (superheroId) {
-                fetch(`https://hero-cors-bridge-22c75d718e5f.herokuapp.com/https://superheroapi.com/api/6505858966191130/${superheroId}`)
-                    .then(response => response.json())
-                    .then(data => {
-
-                        // Displaying the JSON response for simplicity.
-                        // Heroe biography 
-                        document.getElementById('full-name').innerText = data.biography['full-name']
-                        document.getElementById('alter-egos').innerText = data.biography['alter-egos']
-                        document.getElementById('aliases').innerText = data.biography['aliases']
-                        document.getElementById('place-of-birth').innerText = data.biography['place-of-birth']
-                        document.getElementById('first-appearance').innerText = data.biography['first-appearance']
-                        document.getElementById('publisher').innerText = data.biography['publisher']
-                        document.getElementById('alignment').innerText = data.biography['alignment']
-
-                        // Hereoes power stats.
-                        document.getElementById('intelligence').innerText = data.powerstats.intelligence
-                        document.getElementById('strength').innerText = data.powerstats.strength
-                        document.getElementById('speed').innerText = data.powerstats.speed
-                        document.getElementById('durability').innerText = data.powerstats.durability
-                        document.getElementById('power').innerText = data.powerstats.power
-                        document.getElementById('combat').innerText = data.powerstats.combat
-                        // Apearence section 
-                        document.getElementById('gender').innerHTML = data.appearance.gender
-                        document.getElementById('race').innerHTML = data.appearance.race
-                        document.getElementById('height').innerHTML = data.appearance.height
-                        document.getElementById('weight').innerHTML = data.appearance.weight
-                        document.getElementById('eye-color').innerHTML = data.appearance['eye-color']
-                        document.getElementById('hair-color').innerHTML = data.appearance['hair-color']
-                        // Work section
-                        document.getElementById('occupation').innerHTML = data.work.occupation
-                        document.getElementById('base').innerHTML = data.work.base
-                        // Connections section
-                        document.getElementById('group-affiliation').innerHTML = data.connections['group-affiliation']
-                        document.getElementById('relatives').innerHTML = data.connections.relatives
-                        // Image section
-                        document.getElementById('hero-image').src = data.image.url
-                        document.getElementById('hero-image').style.display = 'block'
-
-                    })
-                    .catch(error => {
-                        console.error('Error fetching data:', error);
-                        document.getElementById('results').innerText = 'Failed to fetch superhero data.';
-                    });
-            } else {
-                document.getElementById('results').innerText = 'Please enter a superhero ID.';
-            }
-        });
-    // Your script here...
-});
-
-        
+        document.getElementById("year").innerHTML = new Date().getFullYear();
     </script>
+    <script type="module" src="scripts/project.js"></script>
+    <script src="scripts/main.js"></script>
+    <script type="module" src="scripts/main2.js"></script>
 </body>
 
 </html>
